@@ -1,0 +1,28 @@
+# 🎮 Game Developer Portfolio
+Ini adalah proyek website portofolio pribadi yang dirancang khusus untuk memamerkan karya dan keahlian di bidang **Game Development**, khususnya menggunakan **Luau Scripting** dan **Roblox Studio**. 
+Proyek ini dibuat untuk memenuhi tugas kuliah dengan berfokus pada struktur kode yang bersih (clean code), direktori yang terorganisir, serta antarmuka pengguna (UI/UX) yang sangat modern dan dioptimalkan.
+
+---
+
+## ✨ Fitur Utama (UI/UX Highlights)
+Website ini dibangun tanpa menggunakan *library* atau *framework* eksternal yang berat, murni menggunakan teknologi web standar dengan optimasi tingkat tinggi:
+
+- **Estetika Dark Mode & Neon:** Menggunakan kombinasi warna gelap (*dark metallic chrome*) dengan aksen cahaya neon biru dan emas yang futuristik.
+- **Glassmorphism Navigation:** Bilah navigasi menggunakan efek kaca buram (*backdrop-filter blur*) yang memberikan kesan premium.
+- **Hardware-Accelerated Animations:** Transisi *scroll* sangat mulus (60 FPS) menggunakan `Intersection Observer API` dan properti CSS `will-change` agar beban render dialihkan ke GPU, sehingga tidak membuat *lag* di PC maupun *mobile*.
+- **Fully Responsive:** Tata letak otomatis beradaptasi (mengecil/memadat) dengan sempurna saat dibuka melalui layar *smartphone* atau tablet.
+
+---
+
+## 📁 Struktur Direktori
+
+Proyek ini memiliki struktur folder yang jelas dan standar industri untuk memudahkan proses *maintenance* dan evaluasi kode:
+```text
+📁 tugas-kuliah-web/
+├── 📁 css/
+│   └── 📄 style.css       # Berisi seluruh gaya visual, variabel warna, dan animasi
+├── 📁 js/
+│   └── 📄 script.js       # Berisi logika Intersection Observer untuk animasi scroll
+├── 📁 images/             # Direktori untuk menyimpan aset gambar/screenshot (jika ada)
+├── 📄 index.html          # Kerangka utama halaman web portofolio
+└── 📄 README.md           # Dokumentasi proyek (file ini)
