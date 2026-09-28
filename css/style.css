@@ -1,0 +1,222 @@
+/* Variabel dan Reset Dasar */
+:root {
+    --bg-color: #0a0a0a; 
+    --text-color: #e0e0e0;
+    --neon-blue: #00d2ff;
+    --card-bg: #151515;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.7;
+    overflow-x: hidden; 
+}
+
+/* Navigasi Glassmorphism (Efek Kaca) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--neon-blue);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Pengaturan Layout Umum */
+section {
+    padding: 120px 8%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 20px auto 40px;
+    color: #a0a0a0;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+/* Efek Teks & Tombol */
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+strong.aksen-emas {
+    color: #ffd700;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.btn-neon {
+    display: inline-block;
+    padding: 14px 40px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--neon-blue);
+    border-radius: 50px; 
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+.btn-neon:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Kartu Proyek (Dark Metallic Chrome) */
+.kumpulan-kartu {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.kartu-proyek {
+    background: linear-gradient(145deg, #1e1e1e, #121212);
+    padding: 40px 30px;
+    width: 320px;
+    border-radius: 20px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), 
+               -5px -5px 15px rgba(255, 255, 255, 0.02);
+}
+
+.kartu-proyek:hover {
+    border-color: rgba(0, 210, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2) inset;
+    transform: translateY(-10px);
+}
+
+.kartu-proyek h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.kartu-proyek p {
+    color: #a0a0a0;
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #050505;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Animasi Scroll (Sangat Mulus & Ringan) */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    will-change: transform, opacity; /* Hardware Acceleration */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optimasi Layar HP (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    nav { padding: 15px 5%; }
+    .menu { gap: 15px; }
+    .menu a { font-size: 13px; }
+    section { padding: 100px 5%; }
+    .kartu-proyek {
+        width: 100%;
+        padding: 25px 20px;
+    }
+}
